@@ -1,0 +1,63 @@
+{
+  "name": "dsh-workflow-studio",
+  "version": "0.1.0",
+  "description": "Workflow Studio for the DeepSeek Harness desktop shell — launch workflows with /workflow and watch every subagent's work and structure in a live board.",
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "cordis",
+    "workflow",
+    "subagent",
+    "orchestration"
+  ],
+  "type": "module",
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "host",
+    "workflows",
+    "tools",
+    "test",
+    "README.md",
+    "README.en.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "node test/check.mjs"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-slots"
+      ],
+      "platform": "web"
+    }
+  },
+  "engines": {
+    "node": "^22.19.0 || >=24"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VCPr0j3k7/dsh-workflow-studio.git"
+  },
+  "bugs": {
+    "url": "https://github.com/VCPr0j3k7/dsh-workflow-studio/issues"
+  },
+  "homepage": "https://github.com/VCPr0j3k7/dsh-workflow-studio#readme",
+  "author": "VCPr0j3k7",
+  "publishConfig": {
+    "access": "public"
+  },
+  "license": "MIT"
+}

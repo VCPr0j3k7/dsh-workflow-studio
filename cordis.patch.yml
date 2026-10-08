@@ -1,0 +1,15 @@
+# dsh-workflow-studio —— DSH bundle patch
+#
+# 这是插件的挂载声明。DSH 启动时按 bundle 层栈叠加各插件的 patch。
+#
+# 本插件不接管工作流的执行：脚本解析、并发上限、取消、子智能体派生全部由官方
+# `@deepseek-ai/dsh-workflow`（`ctx.workflowEngine`）负责。本插件做两件官方没有的事：
+#   1. 把 `/workflow` 注册成人类命令，让工作流能像 ZCode 那样被直接调起；
+#   2. 订阅 `workflow/*` 与 `session/event`，把「阶段 → 子智能体 → 实时工作内容」
+#      投影成一张可视图，并通过 HTTP 提供给客户端半边。
+#
+# 因此它与官方的 `dsh-tool-workflow` 同时启用不会冲突：一个面向模型，一个面向人。
+
+- insert:
+    - id: dsh-workflow-studio
+      name: dsh-workflow-studio

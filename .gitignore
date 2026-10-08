@@ -1,0 +1,9 @@
+# 探针脚本生成的端口改写钩子（每次运行都会重写）
+tools/_probe-port-hook.mjs
+
+# 探针宿主自己的 DSH_HOME（临时目录，含日志与 storage）
+probe-home/
+
+node_modules/
+*.log
+.DS_Store
