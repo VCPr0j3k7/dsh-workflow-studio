@@ -1,0 +1,7 @@
+# 全部按文本处理，仓库里统一 LF（Windows 检出时 git 仍可自行转换工作区）
+* text=auto eol=lf
+
+# 这些是二进制，别做行尾转换
+*.png binary
+*.ico binary
+*.zstd binary
